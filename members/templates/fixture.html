@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tennis Fixture</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      padding: 20px;
+    }
+    .player-photo {
+      max-width: 100px;
+      max-height: 100px;
+    }
+  </style>
+</head>
+<body>
+      <!-- LOAD OUR STATIC DIRECTORY -->
+      {% load static %}
+      <!-- INCLUDE OUR NAVBAR  -->
+      {% include 'navbar.html' %}
+        <!-- LOAD OUR STATIC DIRECTORY -->
+        {% load static %}
+
+<div class="container">
+  <h2>Tennis Fixture</h2>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th class="bg-info">Photo</th>
+        <th class="bg-info">Player</th>
+        <th class="bg-info">Country</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><img class="player-photo" src="{% static 'royel.jpg' %}" alt=""></td>
+        <td>Roger Federer</td>
+        <td>Switzerland</td>
+      </tr>
+      <tr>
+        <td><img class="player-photo" src="{% static 'rafael.jpg' %}" alt=""></td>
+        <td>Rafael Nadal</td>
+        <td>Spain</td>
+      </tr>
+      <tr>
+        <td><img class="player-photo" src="{% static 'novak.jpg' %}" alt=""></td>
+        <td>Novak Djokovic</td>
+        <td>Serbia</td>
+      </tr>
+     
+    </tbody>
+  </table>
+
+
+<div class="container">
+    <h2>Tennis Match Table</h2>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Player 1</th>
+          <th>Country 1</th>
+          <th>Player 2</th>
+          <th>Country 2</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Roger Federer</td>
+          <td>Switzerland</td>
+          <td>Rafael Nadal</td>
+          <td>Spain</td>
+        </tr>
+        <tr>
+          <td>Novak Djokovic</td>
+          <td>Serbia</td>
+          <td>Andy Murray</td>
+          <td>United Kingdom</td>
+        </tr>
+      
+      </tbody>
+    </table>
+</div>
+
+</body>
+</html>

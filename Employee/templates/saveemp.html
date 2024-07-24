@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employees</title>
+    {% extends 'sidebar.html' %}
+</head>
+<body class=" container-fluid">
+    {% block content %}
+    
+   <form action="{% url 'saveemployee' %}" method="post" class=" card p-5 bg-light mt-5 col-md-8">
+       {% csrf_token %}
+       <div class="form-group row ">
+           <label class="col-sm-1 col-form-lable"></label>
+           <div class="col-sm-6">
+               <h3 class="text-primary">Enter Employee Details</h3>
+           </div>
+       </div>
+
+       <div class="form-group row">
+           <label class="col-sm-4 "> Employee Name</label>
+           <div class="col-sm-4 ">
+               {{form.name}}
+           </div>
+       </div>
+       <div class="form-group row">
+           <label class="col-sm-4 col-form-label" >Employee Contact</label>
+           <div class="col-sm-4">
+               {{form.contact}}
+           </div>
+       </div>
+       <div class="form-group row">
+           <label class="col-sm-4 col-form-label">Employee Email</label>
+           <div class="col-sm-4">
+               {{form.email}}
+           </div>
+       </div>
+       <button class="btn btn-primary " type="submit">Submit</button>
+   </form>
+   {% endblock %}
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Player</title>
+    {% extends 'sidebar.html' %}
+</head>
+<body class="container-fluid">
+    
+{% block content %}
+<form action="{% url 'update_kit' kit.kit_id %}" method="post" class="post-form card p-5 bg-light mt-5 col-md-8">
+    {% csrf_token %}
+    <div class="form-group row">
+        <label class="col-sm-1 col-form-label"></label>
+        <div class="col-sm-6">
+            <h3 class="text-primary">Update Kit Details</h3>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-sm-4 col-form-label">Kit Name</label>
+        <div class="col-sm-6">
+            <input type="text" id="id_first_name" name="kit_name" class="form-control" value="{{ kit.kit_name }}">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-sm-4 col-form-label">Player Name</label>
+        <div class="col-sm-6">
+            <select class="form-control" name="player_id" required>
+                {% for player in players %}
+                    <option value="{{ player.player_id }}" {% if player.player_id == kit.player_id %} selected {% endif %}>
+                        {{ player.first_name }} {{ player.last_name }}
+                    </option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+    
+    <div class="form-group row">
+        <label for="id_age" class="col-sm-4 col-form-label">Collection Date</label>
+        <div class="col-sm-6">
+            <input type="date" name="collection_date" class="form-control" value="{{ kit.collection_date|date:'Y-m-d' }}">
+        </div>
+    </div>
+    
+
+
+    <button class="btn btn-outline-success col-sm-4" type="submit">Save Changes</button>
+</form>
+{% endblock %}
+
+</body>
+</html>

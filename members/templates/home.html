@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <!-- LOAD OUR STATIC DIRECTORY -->
+    {% load static %}
+    <!-- INCLUDE OUR NAVBAR  -->
+    {% include 'navbar.html' %}
+    
+    <div class="">
+       <section class="row mb-5">
+        <!-- <h1 class="text-danger">Tennis club</h1> -->
+        <div class="col-md-12">
+            <img src="{% static 'main.jpg' %}" alt="" width="100%">
+        </div>
+       </section>
+    </div>
+<!-- the second picture -->
+<!-- the  first section -->
+
+<div class="container-fluid">
+    <section class="row mb-5 ">
+    
+        <div class="col-md-3 card shadow  me-1 ">
+            <img src="{% static 'kids1.jpg' %}" alt="" width="100%">
+            <div class="card-body">
+                <h1 style="color: blue;">kids classes</h1>
+                <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, tenetur similique! Nemo tempore nesciunt rerum? Vero laborum ut similique aliquid.</p>
+            </div>
+           
+        </div>
+        <!-- the second div -->
+
+        <div class="col-md-3 card shadow me-1">
+            <img src="{% static 'kids2.jpg' %}" alt="" width="100%">
+            <div class="card-body">
+                <h1 style="color: blue;">kids pratice</h1>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis quae iusto fugit nihil ab qui dolore! Magni modi harum tempora illo vel, eaque ducimus dolorum voluptatum quidem nesciunt pariatur voluptates?</p>
+
+            </div>
+           
+            
+        </div>
+        <!-- the  third div-->
+
+        <div class="col-md-3 card shadow">
+            <img src="{% static 'kids3.jpg' %}" alt="" width="100%">
+            <div class="card-body">
+                <h1 style="color: blue;"> free classes</h1>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis quae iusto fugit nihil ab qui dolore! Magni modi harum tempora illo vel, eaque ducimus dolorum voluptatum quidem nesciunt pariatur voluptates?</p>
+
+            </div>
+           
+           
+        </div>
+
+       
+    </section>
+
+    <section class="row">
+    
+        <div class="col-md-4 card shadow container-fluid ">
+            <div class="card-head">
+                <h1 style="color: blueviolet;">GOLD</h1>
+            <img src="{% static 'kids4.jpg' %}" alt="" width="100%">
+            <div class="card-body">
+               
+                <p >This represents the highest level of achievement in tennis tournaments. The gold medal is awarded to the player or team that emerges victorious in the final match or event. Winning the gold medal signifies excellence, determination, and mastery of the sport. It's often considered the ultimate goal for athletes competing at events like the Olympics or the top-tier tennis competitions.</p>
+                <div class="card-footer">
+                    <a class="btn btn-primary" href="" role="button">book</a>
+
+                </div>
+            </div>
+            </div>
+            
+        </div>
+        <!-- the second div -->
+
+        <div class="col-md-4 card shadow container-fluid ">
+            <div class="card-head">
+                <h1 style="color: blueviolet;">SILVER</h1>
+            <img src="{% static 'kids5.jpg' %}" alt="" width="100%">
+            <div class="card-body">
+               
+                <p >The silver medal is awarded to the player or team that finishes as the runner-up in the tournament. While it's not the highest honor, winning the silver medal still signifies exceptional skill and accomplishment. Players who earn the silver medal often come very close to winning the gold and demonstrate impressive performances throughout the tournament.</p>
+                <div class="card-footer">
+                    <a class="btn btn-primary" href="" role="button">book</a>
+
+                </div>
+            </div>
+            </div>
+            
+        </div>
+        <!-- the  third div-->
+        <div class="col-md-4 card shadow container-fluid ">
+            <div class="card-head">
+                <h1 style="color: blueviolet;">BRONZE</h1>
+            <img src="{% static 'kids6.jpg' %}" alt="" width="100%">
+            <div class="card-body">
+               
+                <p >The bronze medal is awarded to the player or team that finishes in third place. Though not as prestigious as gold or silver, winning the bronze medal is still a significant achievement. It represents overcoming challenges, resilience, and being among the top performers in the competition</p>
+                <div class="card-footer">
+                    <a class="btn btn-primary" href="" role="button">book</a>
+
+                </div>
+            </div>
+            </div>
+            
+        </div>       
+    </section>
+
+    <section class="row">
+        <div class="card shadow col-md-4">
+            <div class="card-header">
+                GOLD
+            </div>
+            <img src="{% static 'kids6.jpg' %}" alt="" width="100%">
+            <div class="card-body">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas inventore deserunt libero facere magnam voluptatum nemo, cupiditate necessitatibus ipsam eligendi molestiae sequi nulla dolores laboriosam repudiandae dignissimos sint odio. Nesciunt.</p>
+            </div>
+            <div class="card-footer">
+                <a href="" class=" btn btn-primary"> Book</a>
+            </div>
+        </div>
+
+        <div class="card shadow col-md-4">
+            <div class="card-header">
+                GOLD
+            </div>
+            <img src="{% static 'kids6.jpg' %}" alt="" width="100%">
+            <div class="card-body">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas inventore deserunt libero facere magnam voluptatum nemo, cupiditate necessitatibus ipsam eligendi molestiae sequi nulla dolores laboriosam repudiandae dignissimos sint odio. Nesciunt.</p>
+            </div>
+            <div class="card-footer">
+                <a href="" class=" btn btn-primary"> Book</a>
+            </div>
+        </div>
+
+        <div class="card shadow col-md-4">
+            <div class="card-header">
+                GOLD
+            </div>
+            <img src="{% static 'kids6.jpg' %}" alt="" width="100%">
+            <div class="card-body">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas inventore deserunt libero facere magnam voluptatum nemo, cupiditate necessitatibus ipsam eligendi molestiae sequi nulla dolores laboriosam repudiandae dignissimos sint odio. Nesciunt.</p>
+            </div>
+            <div class="card-footer">
+                <a href="" class=" btn btn-primary"> Book</a>
+
+            </div>
+        </div>
+    </section>
+ 
+
+
+</div> 
+    
+</body>
+</html>

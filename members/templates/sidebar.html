@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Tennis Club</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+    <style>
+        body {
+            display: flex;
+        }
+        .sidebar {
+            width: 200px;
+            height: 100vh;
+            background-color: #343a40;
+            color: #fff;
+            padding: 15px;
+            /* padding-right: 0; */
+        }
+        .sidebar a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            padding: 10px 0;
+            background-color: #343a40;
+        }
+        .sidebar a:hover {
+            background-color:whitesmoke;
+            color: #343a40;
+            border-radius: 15px;
+        }
+        .main-content {
+            flex-grow: 1;
+            padding: 20px;
+        }
+        hr{
+            border: whitesmoke;
+            border-width:1px;
+            border-color: #fff;
+            border-style: dashed;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="sidebar ">
+        <h4>Tennis Club</h4><hr >
+        <a href="{% url 'home' %}"  
+        class="list-group-item list-group-item-action py-2 ripple ps-3 pe-3">
+        <i class="fas fa-home fa-fw me-3"></i><span>Home</span></a>
+
+        <a href="{% url 'dashboard' %}"  
+        class="list-group-item list-group-item-action py-2 ripple ps-3 pe-3">
+        <i class="fas fa-tachometer-alt fa-fw me-3"></i><span>Dashboard</span></a>
+        
+        <div class="dropdown">
+            <a href="#" class="list-group-item list-group-item-action py-2 ripple ps-3 pe-3 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fas fa-user fa-fw me-3"></i><span>Employees</span>
+            </a>
+            <ul class="dropdown-menu bg-dark">
+              <li><a class="dropdown-item text-white bg-dark p-2 fas fa-eye"  href="{% url 'employees' %}">View Employees</a></li>
+              <li><a class="dropdown-item text-white bg-dark p-2 fas fa-plus" href="{% url 'saveemployee' %}">Add Employee</a></li>
+            </ul>
+        </div>
+
+        <div class="dropdown">
+            <a href="#" class="list-group-item list-group-item-action py-2 ripple ps-3 pe-3 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fas fa-user fa-fw me-3"></i><span>Players</span>
+            </a>
+            <ul class="dropdown-menu bg-dark">
+              <li><a class="dropdown-item text-white bg-dark p-2 fas fa-eye"  href="{% url 'playerview' %}">View </a></li>
+              <li><a class="dropdown-item text-white bg-dark p-2 fas fa-plus" href="{% url 'playeradd' %}">Add </a></li>
+            </ul>
+        </div>
+
+        <div class="dropdown">
+            <a href="#" class="list-group-item list-group-item-action py-2 ripple ps-3 pe-3 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fas fa-user fa-fw me-3"></i><span>Kits</span>
+            </a>
+            <ul class="dropdown-menu bg-dark">
+              <li><a class="dropdown-item text-white bg-dark p-2 fas fa-eye"  href="{% url 'kitview' %}">View </a></li>
+              <li><a class="dropdown-item text-white bg-dark p-2 fas fa-plus" href="{% url 'kitadd' %}">Add </a></li>
+            </ul>
+        </div>
+
+        
+
+
+        
+    
+    </div>
+    <div class="main-content ">
+        {% block content %}
+        <!-- Content will be injected here -->
+        {% endblock %}
+    </div>
+</body>
+</html>

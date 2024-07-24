@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employees</title>
+{% extends 'sidebar.html' %}
+</head>
+<body class=" container-fluid">
+    
+    {%  block content %}
+    <form action="{% url 'update_emp' employee.employee_id %}" method="post" class=" post-form card p-5 bg-light mt-5">
+        {% csrf_token %}
+        <div class="form-group row">
+            <label class="col-sm-1 col-form-lable"></label>
+            <div class="col-sm-6">
+                <h3 class="text-primary">Update Employee Details</h3>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-4 col-form-label"> Employee Name</label>
+            <div class="col-sm-4">
+                <input type="text" name="name" id="name" value="{{employee.name}}">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-4 col-form-label" >Employee Contact</label>
+            <div class="col-sm-4">
+                <input type="text" name="contact" id="contact" value="{{employee.contact}}">
+                
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-4 col-form-label">Employee Email</label>
+            <div class="col-sm-4">
+                <input type="text" name="email" id="email" value="{{employee.email}}">
+                
+            </div>
+        </div>
+        <button class="btn btn-outline-success col-sm-4" type="submit">Save Changes</button>
+    </form>
+    {% endblock %}
+    
+    
+</body>
+</html>

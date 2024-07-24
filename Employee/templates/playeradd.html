@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Player</title>
+    {% extends 'sidebar.html' %}
+</head>
+<body class="container-fluid">
+    {% block content %}
+    
+   <form action="{% url 'playeradd' %}" method="post" class="card p-5 bg-light mt-5 col-md-8">
+       {% csrf_token %}
+       <div class="form-group row">
+           <label class="col-sm-1 col-form-label"></label>
+           <div class="col-sm-6">
+               <h3 class="text-primary">Enter Player Details</h3>
+           </div>
+       </div>
+
+       <div class="form-group row">
+           <label for="id_first_name" class="col-sm-4 col-form-label">First Name</label>
+           <div class="col-sm-6">
+               {{ form.first_name }}
+           </div>
+       </div>
+       <div class="form-group row">
+           <label for="id_last_name" class="col-sm-4 col-form-label">Last Name</label>
+           <div class="col-sm-6">
+               {{ form.last_name }}
+           </div>
+       </div>
+       <div class="form-group row">
+           <label for="id_age" class="col-sm-4 col-form-label">Age</label>
+           <div class="col-sm-6">
+               {{ form.age }}
+           </div>
+       </div>
+       <div class="form-group row">
+           <label for="id_address" class="col-sm-4 col-form-label">Address</label>
+           <div class="col-sm-6">
+               {{ form.address }}
+           </div>
+       </div>
+       <div class="form-group row">
+           <label for="id_email" class="col-sm-4 col-form-label">Email</label>
+           <div class="col-sm-6">
+               {{ form.email }}
+           </div>
+       </div>
+       <div class="form-group row">
+           <label for="id_trainer_id" class="col-sm-4 col-form-label">Trainer</label>
+           <div class="col-sm-6">
+               {{ form.trainer_id }}
+           </div>
+       </div>
+       <div class="form-group row">
+           <label for="id_club_id" class="col-sm-4 col-form-label">Club</label>
+           <div class="col-sm-6">
+               {{ form.club_id }}
+           </div>
+       </div>
+       <div class="form-group row">
+           <label for="id_dob" class="col-sm-4 col-form-label">Date of Birth</label>
+           <div class="col-sm-6">
+               {{ form.dob }}
+           </div>
+       </div>
+       <button class="btn btn-primary" type="submit">Submit</button>
+   </form>
+   {% endblock %}
+</body>
+</html>

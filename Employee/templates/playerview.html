@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Player's Table</title>
+<style>
+/* Custom CSS */
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: whitesmoke;
+}
+
+.table-striped tbody tr:hover {
+    background-color: lightgray;
+}
+
+.btn-action {
+    margin-right: 5px;
+}
+</style>
+{% extends 'sidebar.html' %}
+</head>
+<body>
+{% block content %}
+{% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>{{ message }}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}
+{% endif %} 
+
+<div class="container">
+    <h2>Player's Details</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Player ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Age</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for player in players %}
+            <tr>                
+                <td>{{ player.player_id }}</td>
+                <td>{{ player.first_name }}</td>
+                <td>{{ player.last_name }}</td>
+                <td>{{ player.age }}</td>
+                <td>{{ player.email }}</td>
+                <td>{{ player.address }}</td>
+                <td>
+                    <a href="{% url 'update_player' player.player_id %}" class="btn btn-primary">Update</a>
+                    <a href="{% url 'delete_player' player.player_id %}" class="btn btn-danger" onclick="confirmDelete('{{ player.first_name }} {{ player.last_name }}')">Delete</a>
+                </td>
+            </tr>          
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'playeradd' %}" class="btn btn-lg btn-outline-primary">Add Player</a>
+</div>
+
+<script>
+function confirmDelete(playerName) {
+    if (confirm("Are you sure you want to delete " + playerName + "?")) {
+        // Proceed with deletion
+    } else {
+        // Cancel deletion
+    }
+}
+</script>
+
+{% endblock %}
+</body>
+</html>

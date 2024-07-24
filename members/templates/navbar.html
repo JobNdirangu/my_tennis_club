@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a  class="navbar-brand" href="javascript:void(0)">Tennis club</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-taeget="#mynavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mynavbar">
+            <ul class="navbar-nav me-auto">
+                <a class="nav-link"  href="{% url 'home' %}">Home</a>
+                <a  class="nav-link" href="{% url 'players' %}">Players</a>
+                <a  class="nav-link" href="{% url 'fixture' %}">fixture</a>
+                <a  class="nav-link" href="{% url 'gallery' %}">gallery</a>
+                <a class="nav-link" href="{% url 'dashboard' %}">Admin</a>
+
+
+            </ul>
+            <form class="d-flex">
+                <input type="text" name="" id="" placeholder="search">
+                <button class="btn btn-primary" type="button">search</button>
+
+            </form>
+
+        </div> 
+    
+
+    </div>
+</nav>

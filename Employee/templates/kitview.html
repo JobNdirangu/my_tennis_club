@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kits Collection Details's Table</title>
+<style>
+/* Custom CSS */
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: whitesmoke;
+}
+
+.table-striped tbody tr:hover {
+    background-color: lightgray;
+}
+
+.btn-action {
+    margin-right: 5px;
+}
+</style>
+{% extends 'sidebar.html' %}
+</head>
+<body>
+{% block content %}
+{% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>{{ message }}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}
+{% endif %} 
+
+<div class="container">
+    <h2>Kits Collection Details</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Kit ID</th>
+                <th>Kit Name</th>
+                <th>Player Name</th>
+                <th>Collection Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for kit in kits %}
+            <tr>                
+                <td>{{ kit.kit_id }}</td>
+                <td>{{ kit.kit_name }}</td>
+                <td>{{ kit.player_id }}</td>
+                <td>{{ kit.collection_date }}</td>
+                <td>
+                    <a href="{% url 'update_kit' kit.kit_id %}" class="btn btn-primary">Update</a>
+                    <a href="{% url 'delete_kit' kit.kit_id %}" class="btn btn-danger" onclick="confirmDelete('{{ kit.first_name }} {{ kit.last_name }}')">Delete</a>
+                </td>
+            </tr>          
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'kitadd' %}" class="btn btn-lg btn-outline-primary">Add kit</a>
+</div>
+
+<script>
+function confirmDelete(kitName) {
+    if (confirm("Are you sure you want to delete " + kitName + "?")) {
+        // Proceed with deletion
+    } else {
+        // Cancel deletion
+    }
+}
+</script>
+
+{% endblock %}
+</body>
+</html>
